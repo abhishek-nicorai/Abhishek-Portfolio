@@ -19,6 +19,7 @@ export interface Experience {
 }
 
 export interface Skill {
-  category: string;
-  items: string[];
+  name: string;
+  icon: string;
+  category: "Frontend" | "Backend" | "Architecture" | "Systems" | "DevOps" | "Tools";
 }

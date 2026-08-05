@@ -18,14 +18,14 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILLS: Skill[] = [
-  {
-    category: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    category: "Tools",
-    items: ["Git", "GitHub", "VS Code", "Vercel"],
-  },
+  { name: "React", icon: "terminal", category: "Frontend" },
+  { name: "Node.js", icon: "dns", category: "Backend" },
+  { name: "TypeScript", icon: "code", category: "Architecture" },
+  { name: "PostgreSQL", icon: "database", category: "Systems" },
+  { name: "Docker", icon: "cloud", category: "DevOps" },
+  { name: "Next.js", icon: "layers", category: "Frontend" },
+  { name: "Tailwind", icon: "palette", category: "Frontend" },
+  { name: "Git", icon: "history", category: "Tools" },
 ];
 
 // Leave this empty for now if you are a student, or add your details
