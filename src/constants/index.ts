@@ -9,11 +9,21 @@ export const NAV_LINKS: NavItem[] = [
 
 export const PROJECTS: Project[] = [
   {
-    title: "Production Portfolio",
-    description: "A modular, type-safe portfolio website built with Next.js 15 and Tailwind CSS.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-    githubUrl: "https://github.com/yourusername/portfolio", // Update this later
-    liveUrl: "https://your-vercel-url.vercel.app", // Update this later
+    title: "Project Nexus",
+    description: "A real-time collaborative workspace for development teams, featuring end-to-end encryption and custom workflow modules.",
+    techStack: ["React", "Firebase", "Tailwind"],
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+    githubUrl: "#",
+    liveUrl: "#",
+    size: "large",
+  },
+  {
+    title: "Core API",
+    description: "High-performance REST API with automated documentation and testing pipelines.",
+    techStack: ["Node.js", "Express", "PostgreSQL"],
+    imageUrl: "https://images.unsplash.com/photo-1614064641935-3bb7518b2c5f?auto=format&fit=crop&q=80&w=1000",
+    githubUrl: "#",
+    size: "small",
   },
 ];
 

@@ -7,8 +7,10 @@ export interface Project {
   title: string;
   description: string;
   techStack: string[];
+  imageUrl: string;
   githubUrl?: string;
   liveUrl?: string;
+  size: "large" | "small"; // "large" takes 8 cols, "small" takes 4 cols
 }
 
 export interface Experience {
