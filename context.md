@@ -103,3 +103,8 @@
 - Implemented `Contact.tsx` with high-impact CTA.
 - Created `Footer.tsx` with dynamic year and social link mapping.
 - Centralized social links and contact info in `constants/index.ts`.
+
+## Latest Update
+- Implemented `Experience.tsx` with a vertical timeline design.
+- Added detailed experience descriptions and skill-tagging for each role.
+- Updated `constants/index.ts` with professional career data.

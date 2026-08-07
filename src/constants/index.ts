@@ -41,13 +41,25 @@ export const SKILLS: Skill[] = [
 // Leave this empty for now if you are a student, or add your details
 export const EXPERIENCES: Experience[] = [
   {
-    company: "Self-Employed",
+    company: "Freelance / Self-Employed",
     role: "Full Stack Developer",
     duration: "2024 - Present",
     description: [
-      "Building production-ready web applications using modern tech stacks.",
-      "Implementing CI/CD pipelines and modular architecture.",
+      "Architecting modular, type-safe web applications using Next.js and TypeScript.",
+      "Developing responsive UI components with Tailwind CSS following modern design systems.",
+      "Integrating backend services and APIs to create seamless user experiences.",
     ],
+    skills: ["Next.js", "TypeScript", "Tailwind", "PostgreSQL"],
+  },
+  {
+    company: "Open Source Contributor",
+    role: "Developer",
+    duration: "2023 - 2024",
+    description: [
+      "Collaborated on various open-source projects to improve code documentation and performance.",
+      "Resolved issues related to UI responsiveness and state management in React-based libraries.",
+    ],
+    skills: ["React", "Git", "GitHub"],
   },
 ];
 

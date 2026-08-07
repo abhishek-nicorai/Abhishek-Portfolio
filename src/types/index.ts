@@ -16,8 +16,9 @@ export interface Project {
 export interface Experience {
   company: string;
   role: string;
-  duration: string; // e.g., "Jan 2024 - Present"
-  description: string[];
+  duration: string;
+  description: string[]; // Array of strings for bullet points
+  skills?: string[];    // Optional: Tech used in that role
 }
 
 export interface Skill {
