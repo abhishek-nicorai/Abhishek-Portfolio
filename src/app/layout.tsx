@@ -1,5 +1,6 @@
 import { Background } from "@/components/Background";
 import { Navbar } from "@/components/Navbar"; 
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 // Import Inter font (Next.js handles this better than link tags)
 import { Inter } from 'next/font/google';
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="pt-20"> {/* Add padding top so content isn't hidden under fixed nav */}
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );

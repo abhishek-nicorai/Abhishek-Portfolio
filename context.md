@@ -98,3 +98,8 @@
 - Refactored `Skill` type and constants to support icons and categories.
 - Created reusable `SkillCard` with hover-lift and scale animations.
 - Implemented responsive `Skills` section grid.
+
+## Latest Update
+- Implemented `Contact.tsx` with high-impact CTA.
+- Created `Footer.tsx` with dynamic year and social link mapping.
+- Centralized social links and contact info in `constants/index.ts`.

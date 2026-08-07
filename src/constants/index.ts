@@ -50,3 +50,10 @@ export const EXPERIENCES: Experience[] = [
     ],
   },
 ];
+
+export const CONTACT_INFO = {
+  email: "hello@example.com", // Replace with your real email
+  linkedin: "https://linkedin.com/in/yourusername",
+  github: "https://github.com/yourusername",
+  twitter: "https://twitter.com/yourusername",
+};
