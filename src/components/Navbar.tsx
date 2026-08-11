@@ -12,7 +12,7 @@ export const Navbar = () => {
         
         {/* Logo/Brand */}
         <div className="text-2xl font-extrabold text-on-surface tracking-tighter">
-          DevPortfolio
+          Abhishek Tn
         </div>
 
         {/* Desktop Nav - Dynamically mapped from Constants */}

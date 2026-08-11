@@ -108,3 +108,6 @@
 - Implemented `Experience.tsx` with a vertical timeline design.
 - Added detailed experience descriptions and skill-tagging for each role.
 - Updated `constants/index.ts` with professional career data.
+
+- Focused on minimalist typography and sophisticated hover interactions.
+- Grouped skills into narrative "Capabilities" rather than tool lists.

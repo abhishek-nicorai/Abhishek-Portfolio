@@ -27,17 +27,26 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const SKILLS: Skill[] = [
-  { name: "React", icon: "terminal", category: "Frontend" },
-  { name: "Node.js", icon: "dns", category: "Backend" },
-  { name: "TypeScript", icon: "code", category: "Architecture" },
-  { name: "PostgreSQL", icon: "database", category: "Systems" },
-  { name: "Docker", icon: "cloud", category: "DevOps" },
-  { name: "Next.js", icon: "layers", category: "Frontend" },
-  { name: "Tailwind", icon: "palette", category: "Frontend" },
-  { name: "Git", icon: "history", category: "Tools" },
+export const EXPERTISE_DATA = [
+  {
+    id: "01",
+    area: "Frontend Engineering",
+    description: "",
+    tools: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Figma"],
+  },
+  {
+    id: "02",
+    area: "Backend & Systems",
+    description: "",
+    tools: ["Node.js", "PostgreSQL", "Prisma", "Express"],
+  },
+  {
+    id: "03",
+    area: "DevOps & Deployment",
+    description: "",
+    tools: ["Docker", "Git", "Vercel", "GitHub Actions"],
+  }
 ];
-
 // Leave this empty for now if you are a student, or add your details
 export const EXPERIENCES: Experience[] = [
   {
@@ -64,7 +73,7 @@ export const EXPERIENCES: Experience[] = [
 ];
 
 export const CONTACT_INFO = {
-  email: "hello@example.com", // Replace with your real email
+  email: "abhishektn27@gmail.com", // Replace with your real email
   linkedin: "https://linkedin.com/in/yourusername",
   github: "https://github.com/yourusername",
   twitter: "https://twitter.com/yourusername",
