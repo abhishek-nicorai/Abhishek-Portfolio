@@ -29,7 +29,7 @@ export const Hero = () => {
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
             <a href="#contact" className="px-8 py-4 bg-white border border-outline-variant text-on-surface rounded-full font-bold hover:bg-surface-container-low transition-all">
-              Let's Talk
+              Lets Talk
             </a>
           </div>
         </div>
