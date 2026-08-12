@@ -4,7 +4,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 export const Projects = () => {
   return (
     <section id="projects" className="py-32 px-6">
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1120px] mx-auto">
         
         <div className="mb-20 max-w-2xl">
           <h2 className="text-5xl md:text-6xl font-extrabold text-on-surface tracking-tighter mb-8">

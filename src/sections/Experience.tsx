@@ -2,48 +2,59 @@ import { EXPERIENCES } from "@/constants";
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-24 bg-white">
-      <div className="max-w-[1120px] mx-auto px-6">
+    <section id="experience" className="py-32 px-6 bg-surface">
+      <div className="max-w-[1120px] mx-auto">
         
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold text-on-surface tracking-tight">Professional Experience</h2>
-          <div className="w-16 h-1.5 bg-primary mt-6 rounded-full"></div>
+        {/* Section Header */}
+        <div className="mb-24">
+          <p className="text-xs font-bold text-primary uppercase tracking-[0.3em] mb-4">Career Path</p>
+          <h2 className="text-5xl md:text-6xl font-extrabold text-on-surface tracking-tighter">
+            Work History<span className="text-primary">.</span>
+          </h2>
         </div>
 
-        <div className="relative border-l-2 border-outline-variant/30 ml-4 md:ml-8 pl-8 md:pl-12 space-y-16">
+        {/* Experience List */}
+        <div className="space-y-20 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-outline-variant/30 before:to-transparent">
+          
           {EXPERIENCES.map((exp, index) => (
-            <div key={index} className="relative">
-              {/* Timeline Dot */}
-              <div className="absolute -left-[41px] md:-left-[57px] top-1 w-5 h-5 bg-white border-4 border-primary rounded-full" />
+            <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
               
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-on-surface">{exp.role}</h3>
-                  <p className="text-lg text-primary font-semibold">{exp.company}</p>
-                </div>
-                <span className="px-4 py-1.5 bg-surface-container text-on-surface-variant text-xs font-bold rounded-full border border-outline-variant/20 uppercase tracking-wider">
-                  {exp.duration}
-                </span>
+              {/* The Timeline Dot */}
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-outline-variant bg-surface text-on-surface-variant absolute left-0 md:left-1/2 md:-ml-5 shadow-sm group-hover:border-primary group-hover:text-primary transition-colors duration-500 z-10">
+                <span className="material-symbols-outlined text-[18px] font-fill-1">work</span>
               </div>
 
-              <ul className="mt-6 space-y-4 max-w-3xl">
-                {exp.description.map((point, i) => (
-                  <li key={i} className="flex gap-3 text-on-surface-variant leading-relaxed">
-                    <span className="text-primary mt-1.5">•</span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
+              {/* The Content Card */}
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-8 rounded-[2rem] border border-outline-variant/20 bg-white transition-all duration-500 hover:border-primary/20 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+                
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                  <div>
+                    <h3 className="text-xl font-black text-on-surface tracking-tight">{exp.role}</h3>
+                    <p className="text-primary font-bold text-sm tracking-wide">{exp.company}</p>
+                  </div>
+                  <time className="text-[10px] font-black px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant border border-outline-variant/10 whitespace-nowrap">
+                    {exp.duration}
+                  </time>
+                </div>
 
-              {exp.skills && (
-                <div className="flex flex-wrap gap-2 mt-8">
-                  {exp.skills.map((skill) => (
-                    <span key={skill} className="text-[10px] font-bold px-2.5 py-1 bg-surface-container-low border border-outline-variant/30 rounded text-on-surface-variant">
+                <ul className="space-y-4 mb-8">
+                  {exp.description.map((point, i) => (
+                    <li key={i} className="flex gap-3 text-on-surface-variant text-sm leading-relaxed">
+                      <span className="text-primary/40 flex-shrink-0 mt-1">•</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Tech Used in this Role */}
+                <div className="flex flex-wrap gap-2 pt-6 border-t border-outline-variant/10">
+                  {exp.skills?.map((skill) => (
+                    <span key={skill} className="text-[9px] font-bold px-2 py-1 bg-surface-container-low text-on-surface-variant rounded uppercase tracking-tighter">
                       {skill}
                     </span>
                   ))}
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>

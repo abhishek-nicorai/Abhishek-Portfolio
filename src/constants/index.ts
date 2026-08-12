@@ -58,31 +58,57 @@ export const EXPERTISE_DATA = [
 // Leave this empty for now if you are a student, or add your details
 export const EXPERIENCES: Experience[] = [
   {
-    company: "Freelance / Self-Employed",
+    company: "Tech Solutions Inc.",
     role: "Full Stack Developer",
-    duration: "2024 - Present",
+    duration: "2024 — PRESENT",
     description: [
-      "Architecting modular, type-safe web applications using Next.js and TypeScript.",
-      "Developing responsive UI components with Tailwind CSS following modern design systems.",
-      "Integrating backend services and APIs to create seamless user experiences.",
+      "Leading the development of a modular UI kit used across 5 internal products.",
+      "Optimized database queries in PostgreSQL, reducing load times by 40%.",
+      "Collaborating with designers to implement pixel-perfect, accessible interfaces."
     ],
-    skills: ["Next.js", "TypeScript", "Tailwind", "PostgreSQL"],
+    skills: ["Next.js", "TypeScript", "PostgreSQL", "AWS"]
   },
   {
-    company: "Open Source Contributor",
-    role: "Developer",
-    duration: "2023 - 2024",
+    company: "Freelance Projects",
+    role: "Frontend Engineer",
+    duration: "2023 — 2024",
     description: [
-      "Collaborated on various open-source projects to improve code documentation and performance.",
-      "Resolved issues related to UI responsiveness and state management in React-based libraries.",
+      "Built and deployed over 10+ responsive websites for international clients.",
+      "Mastered modern styling tools like Tailwind CSS and Framer Motion for animations.",
+      "Integrated various headless CMS platforms for dynamic content management."
     ],
-    skills: ["React", "Git", "GitHub"],
-  },
+    skills: ["React", "Tailwind", "Figma", "Sanity.io"]
+  }
 ];
 
-export const CONTACT_INFO = {
-  email: "abhishektn27@gmail.com", // Replace with your real email
-  linkedin: "https://linkedin.com/in/yourusername",
+export const CONTACT_DATA = {
+  email: "yourname@example.com",
+  whatsapp: "+919876543210",
   github: "https://github.com/yourusername",
+  linkedin: "https://linkedin.com/in/yourusername",
   twitter: "https://twitter.com/yourusername",
+  location: "Your City, Country",
+  availability: "Currently accepting new projects",
+  web3forms_key: "YOUR_KEY_HERE" // Get yours at web3forms.com
 };
+
+export const FOOTER_LINKS = [
+  {
+    title: "Navigation",
+    links: [
+      { label: "Home", href: "#home" },
+      { label: "Experience", href: "#experience" },
+      { label: "Projects", href: "#projects" },
+      { label: "Contact", href: "#contact" },
+    ],
+  },
+  {
+    title: "Socials",
+    links: [
+      { label: "GitHub", href: CONTACT_DATA.github },
+      { label: "LinkedIn", href: CONTACT_DATA.linkedin },
+      { label: "Twitter", href: CONTACT_DATA.twitter },
+      { label: "WhatsApp", href: `https://wa.me/${CONTACT_DATA.whatsapp.replace('+', '')}` },
+    ],
+  },
+];

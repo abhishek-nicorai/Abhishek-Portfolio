@@ -2,7 +2,7 @@ import { Hero3D } from "@/components/Hero3D";
 
 export const Hero = () => {
   return (
-    <section className="pt-32 pb-24 px-6 max-w-[1120px] mx-auto relative z-10">
+    <section className="pt-14 pb-14 md:pt-24 md:pb-24 px-6 max-w-[1120px] mx-auto relative z-10">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         
         {/* Text Content */}
