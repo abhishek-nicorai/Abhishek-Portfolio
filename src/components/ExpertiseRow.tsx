@@ -12,7 +12,7 @@ export const ExpertiseRow = ({ id, area, description, tools }: ExpertiseRowProps
   return (
     <div className="group relative py-20 border-b border-outline-variant/30 transition-all duration-500 hover:px-15">
       {/* Background Hover Effect */}
-      <div className="absolute inset-0 bg-primary/[0.02] opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10 rounded-2xl" />
+      <div className="absolute inset-0 bg-primary/[0.01] opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10 rounded-2xl" />
 
       <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
         {/* ID & Title */}

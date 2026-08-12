@@ -8,9 +8,8 @@ export interface Project {
   description: string;
   techStack: string[];
   imageUrl: string;
-  githubUrl?: string;
-  liveUrl?: string;
-  size: "large" | "small"; // "large" takes 8 cols, "small" takes 4 cols
+  githubUrl: string; // Required for a dev portfolio
+  liveUrl: string;   // Required for a dev portfolio
 }
 
 export interface Experience {

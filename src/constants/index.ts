@@ -10,29 +10,37 @@ export const NAV_LINKS: NavItem[] = [
 export const PROJECTS: Project[] = [
   {
     title: "Project Nexus",
-    description: "A real-time collaborative workspace for development teams, featuring end-to-end encryption and custom workflow modules.",
-    techStack: ["React", "Firebase", "Tailwind"],
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
-    githubUrl: "#",
-    liveUrl: "#",
-    size: "large",
+    description: "A real-time collaborative workspace for development teams with end-to-end encryption and custom modules.",
+    techStack: ["Next.js", "WebRTC", "PostgreSQL"],
+    imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+    githubUrl: "https://github.com/yourusername",
+    liveUrl: "https://project-nexus.vercel.app",
   },
   {
-    title: "Core API",
-    description: "High-performance REST API with automated documentation and testing pipelines.",
-    techStack: ["Node.js", "Express", "PostgreSQL"],
-    imageUrl: "https://images.unsplash.com/photo-1614064641935-3bb7518b2c5f?auto=format&fit=crop&q=80&w=1000",
-    githubUrl: "#",
-    size: "small",
+    title: "Project Nexus",
+    description: "A real-time collaborative workspace for development teams with end-to-end encryption and custom modules.",
+    techStack: ["Next.js", "WebRTC", "PostgreSQL"],
+    imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+    githubUrl: "https://github.com/yourusername",
+    liveUrl: "https://project-nexus.vercel.app",
   },
+  {
+    title: "Project Nexus",
+    description: "A real-time collaborative workspace for development teams with end-to-end encryption and custom modules.",
+    techStack: ["Next.js", "WebRTC", "PostgreSQL"],
+    imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+    githubUrl: "https://github.com/yourusername",
+    liveUrl: "https://project-nexus.vercel.app",
+  },
+  
+  // Add more projects here...
 ];
-
 export const EXPERTISE_DATA = [
   {
     id: "01",
     area: "Frontend Engineering",
     description: "",
-    tools: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Figma"],
+    tools: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Figma","React", "Next.js", "TypeScript", "Tailwind CSS", "Figma","React", "Next.js", "TypeScript", "Tailwind CSS", "Figma"],
   },
   {
     id: "02",
