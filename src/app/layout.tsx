@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
         <Footer />
          <Script 
-          src="/omnichat.js" 
+          src="https://omnichat-ai-flame.vercel.app/omnichat.js" 
           data-api-key="user_3Hut70rMhshLyNcMTGewB1GFmuS"
           strategy="afterInteractive" 
         />
