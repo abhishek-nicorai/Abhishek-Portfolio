@@ -83,7 +83,7 @@ export const EXPERIENCES: Experience[] = [
 
 export const CONTACT_DATA = {
   email: "yourname@example.com",
-  whatsapp: "+919876543210",
+  whatsapp: "+918139895577",
   github: "https://github.com/yourusername",
   linkedin: "https://linkedin.com/in/yourusername",
   twitter: "https://twitter.com/yourusername",

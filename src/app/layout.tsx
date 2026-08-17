@@ -2,7 +2,7 @@ import { Background } from "@/components/Background";
 import { Navbar } from "@/components/Navbar"; 
 import { Footer } from "@/components/Footer";
 import "./globals.css";
-// Import Inter font (Next.js handles this better than link tags)
+import Script from 'next/script';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -21,6 +21,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </div>
         <Footer />
+         <Script 
+          src="/omnichat.js" 
+          data-api-key="user_3Hut70rMhshLyNcMTGewB1GFmuS"
+          strategy="afterInteractive" 
+        />
       </body>
     </html>
   );

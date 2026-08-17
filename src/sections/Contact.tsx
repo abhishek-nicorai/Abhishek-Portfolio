@@ -67,7 +67,7 @@ export const Contact = () => {
             </div>
 
             {/* Right Side: The Form */}
-            <div className="p-12 md:p-20 bg-white/5 border-l border-white/5 backdrop-blur-sm">
+            <div className="p-12 md:p-20 bg-white/5 border-l border-white/5">
               <form onSubmit={handleFormSubmit} className="space-y-8">
                 <div className="space-y-4">
                   <label className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] ml-1">Full Name</label>
