@@ -110,4 +110,4 @@
 - Updated `constants/index.ts` with professional career data.
 
 - Focused on minimalist typography and sophisticated hover interactions.
-- Grouped skills into narrative "Capabilities" rather than tool lists.
+- Grouped skills into narrative "Capabilities" rather than tool lists
