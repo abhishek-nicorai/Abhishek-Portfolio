@@ -1,100 +1,370 @@
 "use client";
-import React, { useState, useEffect } from "react";
+
+import React, { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { NAV_LINKS, CONTACT_DATA } from "@/constants";
+// import { SiGithub, SiLinkedin } from "react-icons/si";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effect
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  // Prevent scrolling when mobile menu is open
   useEffect(() => {
-    if (isOpen) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "unset";
+    document.body.style.overflow = isOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
   return (
     <>
-      <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
-        scrolled ? "py-6 bg-white/50 backdrop-blur-xl border-outline-variant/10" : "py-6 bg-transparent"
-      }`}>
-        <div className="max-w-[1120px] mx-auto px-6 flex justify-between items-center">
-          
-          {/* Logo */}
-          <a href="#home" className="text-xl font-black text-on-surface tracking-tighter hover:opacity-70 transition-opacity">
-            Abhishek Tn<span className="text-primary">.</span>
+      {/* ================= DESKTOP / MAIN NAVBAR ================= */}
+      <header className="fixed top-0 left-0 w-full z-[100] px-4 md:px-6 pointer-events-none">
+        <nav
+          className={`
+            pointer-events-auto
+            max-w-[1120px]
+            mx-auto
+            transition-all
+            duration-500
+            ease-out
+            ${
+              scrolled
+                ? "mt-4 rounded-full bg-white/80 px-5 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.06)] backdrop-blur-xl"
+                : "mt-0 px-2 py-6"
+            }
+          `}
+        >
+          <div className="flex items-center justify-between">
+            {/* ================= LOGO ================= */}
+            <a
+              href="#home"
+              onClick={closeMenu}
+              className="
+                group
+                text-lg
+                md:text-xl
+                font-black
+                tracking-tighter
+                text-on-surface
+              "
+            >
+              Abhishek Tn
+              <span className="text-primary transition-all duration-300 group-hover:ml-0.5">
+                .
+              </span>
+            </a>
+
+            {/* ================= DESKTOP NAV ================= */}
+            <div className="hidden md:flex items-center gap-8">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="
+                    group
+                    relative
+                    py-2
+                    text-[11px]
+                    font-bold
+                    uppercase
+                    tracking-[0.16em]
+                    text-on-surface-variant
+                    transition-colors
+                    duration-300
+                    hover:text-on-surface
+                  "
+                >
+                  {link.label}
+
+                  {/* Animated underline */}
+                  <span
+                    className="
+                      absolute
+                      bottom-0
+                      left-0
+                      h-px
+                      w-0
+                      bg-primary
+                      transition-all
+                      duration-300
+                      group-hover:w-full
+                    "
+                  />
+                </a>
+              ))}
+
+              {/* Resume */}
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  gap-2
+                  rounded-full
+                  bg-on-surface
+                  px-5
+                  py-2.5
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[0.16em]
+                  text-white
+                  transition-all
+                  duration-300
+                  hover:bg-primary
+                  hover:shadow-lg
+                "
+              >
+                Resume
+
+                <ArrowUpRight
+                  size={14}
+                  strokeWidth={2}
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-0.5
+                    group-hover:-translate-y-0.5
+                  "
+                />
+              </a>
+            </div>
+
+            {/* ================= MOBILE BUTTON ================= */}
+            <button
+              type="button"
+              onClick={() => setIsOpen(true)}
+              aria-label="Open navigation menu"
+              className="
+                md:hidden
+                flex
+                h-10
+                w-10
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-outline-variant/30
+                text-on-surface
+                transition-all
+                duration-300
+                hover:border-primary
+                hover:text-primary
+              "
+            >
+              <Menu size={20} strokeWidth={2} />
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* ================= MOBILE MENU ================= */}
+      <div
+        className={`
+          fixed
+          inset-0
+          z-[110]
+          bg-on-surface
+          transition-transform
+          duration-500
+          ease-[cubic-bezier(0.76,0,0.24,1)]
+          ${
+            isOpen
+              ? "translate-y-0"
+              : "-translate-y-full"
+          }
+        `}
+      >
+        {/* Top bar */}
+        <div className="flex items-center justify-between px-6 py-6">
+          <a
+            href="#home"
+            onClick={closeMenu}
+            className="text-xl font-black tracking-tighter text-white"
+          >
+            Abhishek Tn
+            <span className="text-primary">.</span>
           </a>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-10">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-[12px] font-bold text-on-surface-variant hover:text-primary transition-all tracking-[0.2em] uppercase"
-              >
-                {link.label}
-              </a>
-            ))}
+          <button
+            type="button"
+            onClick={closeMenu}
+            aria-label="Close navigation menu"
+            className="
+              flex
+              h-11
+              w-11
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-white/10
+              text-white/60
+              transition-all
+              duration-300
+              hover:border-primary
+              hover:text-white
+            "
+          >
+            <X size={22} strokeWidth={2} />
+          </button>
+        </div>
+
+        {/* Mobile links */}
+        <div className="flex h-[calc(100%-90px)] flex-col justify-between px-6 pb-10">
+          <div className="flex flex-col justify-center flex-1">
+            <div className="mb-8">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">
+                Navigation
+              </span>
+            </div>
+
+            <div className="space-y-2">
+              {NAV_LINKS.map((link, index) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className="
+                    group
+                    flex
+                    items-center
+                    gap-5
+                    border-b
+                    border-white/10
+                    py-5
+                    text-white
+                    transition-all
+                    duration-300
+                    hover:border-primary
+                  "
+                >
+                  <span
+                    className="
+                      text-[10px]
+                      font-mono
+                      text-white/30
+                      transition-colors
+                      group-hover:text-primary
+                    "
+                  >
+                    0{index + 1}
+                  </span>
+
+                  <span
+                    className="
+                      text-3xl
+                      font-bold
+                      tracking-tighter
+                      transition-all
+                      duration-300
+                      group-hover:translate-x-2
+                      group-hover:text-primary
+                    "
+                  >
+                    {link.label}
+                  </span>
+
+                  <ArrowUpRight
+                    size={20}
+                    className="
+                      ml-auto
+                      text-white/20
+                      transition-all
+                      duration-300
+                      group-hover:-translate-y-1
+                      group-hover:translate-x-1
+                      group-hover:text-primary
+                    "
+                  />
+                </a>
+              ))}
+            </div>
+
+            {/* Resume */}
             <a
               href="/resume.pdf"
-              className="px-6 py-2.5 bg-on-surface text-white rounded-full text-[10px] font-bold tracking-[0.2em] hover:bg-primary transition-all"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+              className="
+                mt-8
+                flex
+                items-center
+                justify-center
+                gap-2
+                rounded-full
+                bg-primary
+                px-6
+                py-4
+                text-xs
+                font-bold
+                uppercase
+                tracking-[0.2em]
+                text-white
+                transition-all
+                duration-300
+                hover:bg-white
+                hover:text-on-surface
+              "
             >
-              RESUME
+              View Resume
+              <ArrowUpRight size={16} />
             </a>
           </div>
 
-          {/* Mobile Toggle */}
-          <button 
-            onClick={() => setIsOpen(true)}
-            className="md:hidden w-10 h-10 flex items-center justify-center text-on-surface"
-          >
-            <span className="material-symbols-outlined text-[28px]">menu</span>
-          </button>
-        </div>
-      </nav>
+          {/* Social links */}
+          <div className="border-t border-white/10 pt-6">
+            <div className="flex items-center justify-between">
+              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/30">
+                Connect
+              </span>
 
-      {/* --- MOBILE FULL-SCREEN MENU --- */}
-      <div className={`fixed inset-0 z-[110] bg-on-surface transition-all duration-700 ease-in-out ${
-        isOpen ? "translate-y-0" : "-translate-y-full"
-      }`}>
-        {/* Close Button */}
-        <button 
-          onClick={() => setIsOpen(false)}
-          className="absolute top-8 right-8 w-12 h-12 flex items-center justify-center text-white/50 hover:text-white"
-        >
-          <span className="material-symbols-outlined text-[32px]">close</span>
-        </button>
+              <div className="flex items-center gap-5">
+                <a
+                  href={CONTACT_DATA.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-white/50 transition-colors hover:text-primary"
+                >
+                  {/* <SiLinkedin size={18} /> */}
+                </a>
 
-        <div className="h-full flex flex-col justify-center px-10 space-y-12">
-          {/* Mobile Nav Links */}
-          <div className="space-y-6">
-            {NAV_LINKS.map((link, i) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`block text-4xl font-bold text-white tracking-tighter transition-all duration-500 delay-[${i * 100}ms] ${
-                  isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Mobile Socials Footer */}
-          <div className={`pt-12 border-t border-white/10 flex gap-8 transition-all duration-700 delay-500 ${
-            isOpen ? "opacity-100" : "opacity-0"
-          }`}>
-            <a href={CONTACT_DATA.linkedin} className="text-white/50 hover:text-primary font-bold text-xs tracking-widest uppercase">LinkedIn</a>
-            <a href={CONTACT_DATA.github} className="text-white/50 hover:text-primary font-bold text-xs tracking-widest uppercase">GitHub</a>
+                <a
+                  href={CONTACT_DATA.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="text-white/50 transition-colors hover:text-primary"
+                >
+                  {/* <SiGithub size={18} /> */}
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

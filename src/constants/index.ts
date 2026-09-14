@@ -40,7 +40,7 @@ export const EXPERTISE_DATA = [
     id: "01",
     area: "Frontend Engineering",
     description: "",
-    tools: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Figma","React", "Next.js", "TypeScript", "Tailwind CSS", "Figma","React", "Next.js", "TypeScript", "Tailwind CSS", "Figma"],
+    tools: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Figma"],
   },
   {
     id: "02",
@@ -82,12 +82,12 @@ export const EXPERIENCES: Experience[] = [
 ];
 
 export const CONTACT_DATA = {
-  email: "yourname@example.com",
+  email: "abhishektn27@gmail.com",
   whatsapp: "+918139895577",
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
+  github: "https://github.com/dashboard",
+  linkedin: "https://www.linkedin.com/in/abhishek-tn-79364a204/",
   twitter: "https://twitter.com/yourusername",
-  location: "Your City, Country",
+  location: "Kerala, India",
   availability: "Currently accepting new projects",
   web3forms_key: "YOUR_KEY_HERE" // Get yours at web3forms.com
 };

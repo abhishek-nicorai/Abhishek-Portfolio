@@ -1,62 +1,80 @@
+
 import { EXPERIENCES } from "@/constants";
+import { ExperienceCard } from "@/components/ExperienceCard";
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-32 px-6 bg-surface">
-      <div className="max-w-[1120px] mx-auto">
-        
+    <section
+      id="experience"
+      className="relative overflow-hidden bg-surface px-6 py-20 md:py-28"
+    >
+      <div className="mx-auto max-w-[1120px]">
+
         {/* Section Header */}
-        <div className="mb-24">
-          <p className="text-xs font-bold text-primary uppercase tracking-[0.3em] mb-4">Career Path</p>
-          <h2 className="text-5xl md:text-6xl font-extrabold text-on-surface tracking-tighter">
-            Work History<span className="text-primary">.</span>
-          </h2>
+        <div className="mb-16 md:mb-24">
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-10 bg-primary" />
+
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              Career Path
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-8 md:flex-col">
+            <h2 className="text-5xl font-extrabold leading-[0.9] tracking-[-0.05em] text-on-surface md:text-7xl">
+              Work
+              <br />
+              <span className="text-primary">History.</span>
+            </h2>
+
+            <p className="max-w-md pb-1 text-sm leading-6 text-on-surface-variant md:text-base">
+              A timeline of the roles, projects and technologies that have shaped my experience as a software engineer.
+              
+            </p>
+          </div>
         </div>
 
-        {/* Experience List */}
-        <div className="space-y-20 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-outline-variant/30 before:to-transparent">
-          
-          {EXPERIENCES.map((exp, index) => (
-            <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              
-              {/* The Timeline Dot */}
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-outline-variant bg-surface text-on-surface-variant absolute left-0 md:left-1/2 md:-ml-5 shadow-sm group-hover:border-primary group-hover:text-primary transition-colors duration-500 z-10">
-                <span className="material-symbols-outlined text-[18px] font-fill-1">work</span>
-              </div>
+        {/* Experience Timeline */}
+        <div className="relative">
 
-              {/* The Content Card */}
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-8 rounded-[2rem] border border-outline-variant/20 bg-white transition-all duration-500 hover:border-primary/20 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
-                
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                  <div>
-                    <h3 className="text-xl font-black text-on-surface tracking-tight">{exp.role}</h3>
-                    <p className="text-primary font-bold text-sm tracking-wide">{exp.company}</p>
-                  </div>
-                  <time className="text-[10px] font-black px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant border border-outline-variant/10 whitespace-nowrap">
-                    {exp.duration}
-                  </time>
-                </div>
+          {/* Desktop Timeline */}
+          <div
+            className="
+              absolute
+              left-[104px]
+              top-0
+              hidden
+              h-full
+              w-px
+              bg-gradient-to-b
+              from-transparent
+              via-outline-variant/40
+              to-transparent
+              md:block
+            "
+          />
 
-                <ul className="space-y-4 mb-8">
-                  {exp.description.map((point, i) => (
-                    <li key={i} className="flex gap-3 text-on-surface-variant text-sm leading-relaxed">
-                      <span className="text-primary/40 flex-shrink-0 mt-1">•</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+          <div className="space-y-14 md:space-y-20">
+            {EXPERIENCES.map((exp, index) => (
+              <ExperienceCard
+                key={`${exp.company}-${exp.role}-${index}`}
+                experience={exp}
+                index={index}
+                isLatest={index === 0}
+              />
+            ))}
+          </div>
+        </div>
 
-                {/* Tech Used in this Role */}
-                <div className="flex flex-wrap gap-2 pt-6 border-t border-outline-variant/10">
-                  {exp.skills?.map((skill) => (
-                    <span key={skill} className="text-[9px] font-bold px-2 py-1 bg-surface-container-low text-on-surface-variant rounded uppercase tracking-tighter">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Bottom */}
+        <div className="mt-16 flex items-center gap-4 md:mt-20">
+          <div className="h-px flex-1 bg-outline-variant/20" />
+
+          <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-on-surface-variant/50">
+            Experience · Growth · Impact
+          </span>
+
+          <div className="h-px flex-1 bg-outline-variant/20" />
         </div>
       </div>
     </section>
