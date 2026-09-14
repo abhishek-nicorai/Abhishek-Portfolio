@@ -26,10 +26,10 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-32 px-6 bg-white">
-      <div className="max-w-[1120px] mx-auto">
+      <div className="mx-auto">
         
         {/* The Premium Hub Card */}
-        <div className="bg-[#0F172A] rounded-[3rem] overflow-hidden relative shadow-2xl">
+        <div className="bg-[#0F172A] rounded-[1rem] overflow-hidden relative shadow-2xl">
           {/* Subtle Background Glow */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
 
