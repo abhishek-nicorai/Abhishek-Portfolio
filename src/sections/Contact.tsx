@@ -25,18 +25,18 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 bg-white">
+    <section id="contact" className="py-32 px-0 bg-white">
       <div className="mx-auto">
         
         {/* The Premium Hub Card */}
-        <div className="bg-[#0F172A] rounded-[1rem] overflow-hidden relative shadow-2xl">
+        <div className="bg-[#0F172A] rounded-[7px] overflow-hidden relative shadow-2xl">
           {/* Subtle Background Glow */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 relative z-10">
             
             {/* Left Side: Information */}
-            <div className="p-12 md:p-20 flex flex-col justify-between">
+            <div className="p-6 md:p-20 flex flex-col justify-between">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
                   <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -67,7 +67,7 @@ export const Contact = () => {
             </div>
 
             {/* Right Side: The Form */}
-            <div className="p-12 md:p-20 bg-white/5 border-l border-white/5">
+            <div className="p-6 md:p-20 bg-white/5 border-l border-white/5">
               <form onSubmit={handleFormSubmit} className="space-y-8">
                 <div className="space-y-4">
                   <label className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] ml-1">Full Name</label>
